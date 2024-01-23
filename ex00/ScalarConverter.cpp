@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 19:13:21 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/23 12:04:08 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:26:42 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
     return (*this);
 }
 
-int ScalarConverter::stoi(const std::string& str, size_t* pos = nullptr) 
+int ScalarConverter::stoi(const std::string& str, size_t* pos = NULL) 
 {
     size_t i = 0;
     int risultato = 0;
@@ -59,14 +59,14 @@ int ScalarConverter::stoi(const std::string& str, size_t* pos = nullptr)
     }
 
     // Imposta la posizione del primo carattere non numerico
-    if (pos != nullptr)
+    if (pos != NULL)
         *pos = i;
 
     // Applica il segno
     return (negativo ? -risultato : risultato);
 }
 
-double ScalarConverter::stod(const std::string& str, size_t* pos = nullptr)
+double ScalarConverter::stod(const std::string& str, size_t* pos = NULL)
 {
     size_t i = 0;
     double risultato = 0.0;
@@ -108,7 +108,7 @@ double ScalarConverter::stod(const std::string& str, size_t* pos = nullptr)
     }
 
     // Imposta la posizione del primo carattere non numerico
-    if (pos != nullptr)
+    if (pos != NULL)
         *pos = i;
 
     // Applica il segno
@@ -151,21 +151,21 @@ void ScalarConverter::convert(const std::string& literal)
     {
         int intResult = static_cast<int>(ScalarConverter::stoi(literal));
         if (literal.find("inff") != std::string::npos)
-            std::cout << "int : impossible" << std::endl;
+            std::cout << "int : impossible, you are INTing ahahah, i'm sad" << std::endl;
         else if (literal.find("-inff") != std::string::npos)
-            std::cout << "int : impossible" << std::endl;
+            std::cout << "int : impossible, you are INTing ahahah, i'm sad" << std::endl;
         else if (literal.find("nan") != std::string::npos)
-            std::cout << "int : impossible" << std::endl;
+            std::cout << "int : impossible, you are INTing ahahah, i'm sad" << std::endl;
         else
             std::cout << "int: " << intResult << std::endl;
     }
     catch(const std::out_of_range& e)
     {
-        std::cout << "int: Overflow or out of range" << std::endl;
+        std::cout << "int: Overflow or out of range, you are INTing ahahah, i'm sad" << std::endl;
     }
     catch(const std::invalid_argument& e)
     {
-        std::cout << "int: Conversion not possible" << std::endl;
+        std::cout << "int: Conversion not possible, you are INTing ahahah, i'm sad" << std::endl;
     }
 
         // Convert to float

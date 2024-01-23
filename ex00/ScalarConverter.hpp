@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 19:04:51 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/23 11:40:54 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:25:24 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <limits>
 #include <stdexcept>
 #include <cctype>
+#include <climits>
 
 class ScalarConverter
 {
