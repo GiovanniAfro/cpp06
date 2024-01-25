@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:52:29 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/23 15:30:28 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:32:39 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SERIALIAZER_HPP
 
 #include <iostream>
-#include <cstdint>
+#include <stdint.h>
 
 struct Data
 {

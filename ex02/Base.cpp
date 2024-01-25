@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:51:38 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/24 19:58:45 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:41:07 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,31 @@ void identify(Base* p)
         std::cout << "Unknow type" << std::endl;
 }
 
-void identify(Base& p) 
+void identify(Base& p)
 {
-    try
-    {
-        (void)dynamic_cast<A &>(p);
-        std::cout << "A" << std::endl;
-    }
-    catch (const std::bad_cast&) {}
-        // Do nothing, try the next type
-    try
-    {
-        (void)dynamic_cast<B &>(p);
-        std::cout << "B" << std::endl;
-    } catch (const std::bad_cast&) {}
-        // Do nothing, try the next type
-    try
-    {
-        (void)dynamic_cast<C &>(p);
-        std::cout << "C" << std::endl;
-    }
-    catch (const std::bad_cast&)
-    {
-        std::cout << "Unknown Type" << std::endl;
-    }
+	try 
+	{
+		Base &ref = dynamic_cast <A&> (p);
+		std::cout << "A&" << std::endl;
+		(void)ref;
+		return ;
+	}
+	catch (std::exception &e) {};
+	try
+	{
+		Base &ref = dynamic_cast <B&> (p);
+		std::cout << "B&" << std::endl;
+		(void)ref;
+		return ;
+	}
+	catch (std::exception &e) {};
+	try
+	{
+		Base &ref = dynamic_cast <C&> (p);
+		std::cout << "C&" << std::endl;
+		(void)ref;
+		return ;
+	}
+	catch (std::exception &e) {};
+	std::cout << "Base&" << std::endl;
 }
